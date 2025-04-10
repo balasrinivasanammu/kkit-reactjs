@@ -1,0 +1,36 @@
+<script>
+	// Literals
+
+	/*
+	In JavaScript, literals are fixed values you write directly in your code. They represent values like numbers, strings, booleans, arrays, etc.
+	*/
+
+const firstName = 'Balaji';
+const age = 30;
+
+const intro = `My name is ${firstName} and I am ${age} years old.`;
+console.log(intro);
+
+// classes
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log('${this.name} makes a noise.');
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
+}
+
+const d = new Dog('Buddy');
+d.speak(); // Buddy barks.
+
+
+</script>

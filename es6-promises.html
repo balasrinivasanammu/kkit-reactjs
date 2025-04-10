@@ -1,0 +1,83 @@
+<!--  In JavaScript, a Promise is a way to handle asynchronous operations.
+
+/*
+What is a Promise?
+
+A Promise is an object that represents the eventual completion or failure of an async operation.
+
+It has 3 states:
+
+    Pending – initial state, neither fulfilled nor rejected
+
+    Fulfilled – the operation completed successfully
+
+    Rejected – the operation failed
+
+   */
+
+ // 1. Basic Syntax -->
+
+ <script>
+ 	const myPromise = new Promise((resolve, reject) => {
+  // async operation here
+  let success = true;
+
+  if (success) {
+    resolve("It worked!s");
+  } else {
+    reject("It failed.");
+  }
+});
+
+
+// 2. Using .then() and .catch()
+
+ 	myPromise
+  .then(result => {
+    console.log(result); // "It worked!"
+  })
+  .catch(error => {
+    console.error(error); // "It failed."
+  });
+
+ // 3. Real Example: Simulating API Call
+
+  function fetchData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const data = { name: 'Balaji', age: 25 };
+      resolve(data); // or reject("Error fetching data");
+    }, 1000);
+  });
+}
+
+fetchData()
+  .then(res => console.log(res))      // { name: 'Alice', age: 25 }
+  .catch(err => console.error(err));
+
+  // 4. Promise Chaining
+
+  fetchData()
+  .then(data => {
+    console.log(data);
+    return data.age;
+  })
+  .then(age => {
+    console.log("Age is:", age);
+  });
+
+// 5. Async/Await (syntactic sugar for promises)
+
+  async function getUser() {
+  try {
+    const data = await fetchData();
+    console.log("my Age is:",data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+getUser();
+
+
+ </script>

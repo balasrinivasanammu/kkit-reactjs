@@ -1,0 +1,56 @@
+<!--
+es6-samples/
+├── arrow-functions.js
+├── destructuring.js
+├── spread-rest.js
+├── classes.js
+├── promises.js
+├── template-literals.js
+├── let-const.js
+└── modules/
+    ├── math.js
+    └── app.js
+-->
+<script>
+    // let vs const
+let counter = 1;
+counter = 2;
+
+const name = 'Balaji';
+// name = 'Srinivasan'; ❌ Error: const variables can't be reassigned
+
+console.log(counter); // 2
+console.log(name);    // Alice
+</script>
+
+<script>
+// Traditional function
+function greet(name) {
+  return 'Welcome ' + name;
+}
+
+// Arrow function
+const greetArrow = (name) => `Welcome ${name}`;
+
+console.log(greet('Balaji'));      // Welcome Balaji
+console.log(greetArrow('Srinivasan')); // Welcome Srinivasan
+</script>
+
+
+<script type="text/javascript">
+    //Destructuring in JavaScript is a convenient way of extracting values from arrays or properties from objects and assigning them to variables in a concise way.
+    // Object destructuring
+const user = { names: 'Tom', age: 25 };
+const { names, age } = user;
+
+console.log(names); // Tom
+console.log(age);  // 25
+
+// Array destructuring
+const colors = ['red', 'green', 'blue'];
+const [first, , third] = colors;
+
+console.log(first); // red
+console.log(third); // blue
+
+</script>

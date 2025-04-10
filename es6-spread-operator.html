@@ -1,0 +1,53 @@
+<script type="text/javascript">
+//1. Spread in Arrays
+
+	//Copying Arrays
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1];
+
+console.log(arr2); // [1, 2, 3]
+
+// Merging Arrays
+const a = [1, 2];
+const b = [3, 4];
+const merged = [...a, ...b];
+
+console.log(merged); // [1, 2, 3, 4]
+
+//Adding Items
+const nums = [2, 3];
+const allNums = [1, ...nums, 4];
+
+console.log(allNums); // [1, 2, 3, 4]
+
+
+//  2. Spread in Objects
+
+// Copying Objects
+const obj1 = { a: 1, b: 2 };
+const obj2 = { ...obj1 };
+
+console.log(obj2); // { a: 1, b: 2 }
+
+
+//  Merging Objects
+const objA = { a: 1 };
+const objB = { b: 2 };
+const combined = { ...objA, ...objB };
+
+console.log(combined); // { a: 1, b: 2 }
+
+// If there are overlapping keys, the last one overrides the earlier ones:
+const obj = { x: 1, y: 2, x: 3 };
+console.log(obj); // { x: 3, y: 2 }
+
+
+// 3. Spread in functions:
+function sum(x, y, z) {
+  return x + y + z;
+}
+
+const numbers = [1, 2, 3];
+console.log(sum(...numbers)); // 6
+
+</script>
