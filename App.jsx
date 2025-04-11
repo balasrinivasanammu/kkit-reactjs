@@ -1,21 +1,21 @@
-import React from 'react';
-import UsersList from './components/UsersList';
-import PostsList from './components/PostsList';
-import RandomQuote from './components/RandomQuote';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Login from './components/Login';
+import Register from './components/Register';
+import Home from './components/Home';
+import './styles.css';
 
-import UserForm from './components/UserForm';
-
-const App = () => {
+function App() {
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>API Fetching Examples</h1>
-      <UsersList />
-      <PostsList />
-      <RandomQuote />
-      <h1>React Controlled Form with Validation</h1>
-      <UserForm />
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
