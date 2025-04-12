@@ -1,0 +1,31 @@
+Hook	           Purpose
+useState --------	Adds state to functional components
+useEffect--------	Side effects like fetching data, subscriptions
+useContext-------	Access context data
+useRef	---------    Access or persist values across renders without re-rendering
+useMemo	--------    Memoize values to optimize performance
+useCallback-------	Memoize functions
+useReducer------	State management alternative to useState (like Redux)
+useLayoutEffect--	Like useEffect but fires synchronously after DOM updates
+useImperativeHandle-	Customize the instance value exposed by ref
+
+react-hooks-demo/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── CounterUseState.js
+│   │   ├── TimerUseEffect.js
+│   │   ├── ThemedTextUseContext.js
+│   │   ├── InputFocusUseRef.js
+│   │   └── CounterUseReducer.js
+│   ├── App.js
+│   ├── index.js
+└── package.json
+
+
+When to Use useReducer                         Instead of useState
+Use useState()	                               Use useReducer()
+Simple state (strings, booleans, etc.)	Complex state logic
+One or two state variables	            Multiple related values in one object
+Rarely changes together	                Many updates or conditional updates
